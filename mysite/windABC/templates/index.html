@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="introduce Win.d web site.">
+        {% load static %}
+        <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
+        <title>Wind</title>
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                {% for m in content1 %}
+                    $('#content1').append('<ul id="content1-1"> <li> <a href=\'{% url "detail" m %}\'> {{ m }}' +'</a>');
+                {% endfor %}
+
+                {% for n in content2 %}
+                    $('#content2').append('<ul id="content2-1"> <li> <a href=\'{% url "detail" n %}\'> {{ n }}' +'</a>');
+                {% endfor %}
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <ul>
+            <li id="content1"> <a href="#"> windHR</a> </li>
+            <li id="content2"> <a href="#"> windTech</a> </li>
+        </ul>
+       
+    </body>
+</html>
